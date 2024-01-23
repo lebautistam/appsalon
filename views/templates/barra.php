@@ -5,8 +5,8 @@
 
 <?php if(isset($_SESSION['admin'])): ?>
     <div class="barra-servicios">
-        <a class="button" href="<?= BASE_URL ?>admin">Ver Citas</a>
-        <a class="button" href="<?= BASE_URL ?>servicios">Ver Servicios</a>
-        <a class="button" href="<?= BASE_URL ?>servicios/crear">Nuevo Servicio</a>
+        <a class="button" href="<?= $_ENV['APP_URL'] ?>/admin">Ver Citas</a>
+        <a class="button" href="<?= $_ENV['APP_URL'] ?>/servicios">Ver Servicios</a>
+        <a class="button" href="<?= $_ENV['APP_URL'] ?>/servicios/crear">Nuevo Servicio</a>
     </div>
 <?php endif; ?>

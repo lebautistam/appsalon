@@ -27,8 +27,8 @@ class Router
         // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
 
         // $auth = $_SESSION['login'] ?? null;
-
-        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        // $currentUrl = strtok($_SERVER['PATH_INFO'], '?') ?? '/'; descomentar para producción
+        $currentUrl = $_SERVER['PATH_INFO'] ?? '/'; //comentar para producción
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {

@@ -31,7 +31,7 @@ class ServicioController {
 
             if(empty($alertas)) {
                 $servicio->guardar();
-                header('Location: '.BASE_URL.'/servicios');
+                header('Location: '.$_ENV['APP_URL'].'/servicios');
             }
         }
         // debuguear($servicio);
@@ -53,7 +53,7 @@ class ServicioController {
 
             if(empty($alertas)) {
                 $servicio->guardar();
-                header('Location: '.BASE_URL.'/servicios');
+                header('Location: '.$_ENV['APP_URL'].'/servicios');
             }
 
         }
@@ -71,7 +71,7 @@ class ServicioController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $servicio = Servicios::find($_POST['id']);
             $servicio->eliminar();
-            header('Location: '.BASE_URL.'/servicios');
+            header('Location: '.$_ENV['APP_URL'].'/servicios');
         }
     }
 }

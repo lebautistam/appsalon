@@ -10,8 +10,8 @@
             <p>Precio: <span><?= $servicio->val_servic ?></span></p>
 
             <div class="acciones">
-                <a class="button" href="<?=BASE_URL?>servicios/actualizar?id=<?=$servicio->id?>">Actualizar</a>
-                <form action="<?=BASE_URL?>servicios/eliminar" method="POST">
+                <a class="button" href="<?=$_ENV['APP_URL']?>/servicios/actualizar?id=<?=$servicio->id?>">Actualizar</a>
+                <form action="<?=$_ENV['APP_URL']?>/servicios/eliminar" method="POST">
                     <input type="hidden" name="id" value="<?=$servicio->id?>">
                     <input type="submit" value="Eliminar" class="button-eliminar">
                 </form>
