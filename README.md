@@ -7,6 +7,7 @@
 
 Url proyecto: https://salonapp-lebautistam.000webhostapp.com/
 
+Proyecto PHP, JavaScript, HTML, CSS (sass, gulp), composer
 El proyecto cuenta con panel administrativo y para el usuario, de tal manera que el cliente podrá reservar su cita, con los servicios y fecha a gusto, el administrador podrá ver las citas reservadas para tener un control dinámico y organizar el tiempo.
 
 ## Instalación
@@ -50,7 +51,7 @@ Asegúrate de tener instalados los siguientes programas:
     Ajusta las variables de entorno en el archivo `.env` según sea necesario.
 5. Crea la base de datos
 
-   Deho el dump cargado en el repositorio para que lo ejecutes en el servidor de base de datos mysql, la base de datos debe llamarse appsalon
+   Dejaré el dump cargado en el repositorio para que lo ejecutes en el servidor de base de datos mysql, la base de datos debe llamarse _appsalon_
    
 6. Inicia la aplicación:
 
