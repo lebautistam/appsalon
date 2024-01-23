@@ -19,12 +19,12 @@ class Email {
     public function enviarEmail () {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'c047170c1664ca';
-        $mail->Password = '530de895707471';
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'tls';
-        $mail->Port = 2525;
+        $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->setFrom('cuentas@appsalon.com');
 
         // Configurar el destinatario
@@ -37,7 +37,7 @@ class Email {
         // Configurar el cuerpo del mensaje
         $mail->Body = "<p><strong>Saludos ".ucfirst($this->nombre)."</strong></p>
                        <p>Te informamos que para confirmar tu cuenta debes dar click en el siguiente enlace</p>
-                       <p><a href='http://localhost/AppSalon_PHP_MVC_JS_SASS/confirmar-cuenta?token={$this->token}'>Click aquí</a></p>
+                       <p><a href='".$_ENV['APP_URL']."/appsalon/confirmar-cuenta?token={$this->token}'>Click aquí</a></p>
                        <p>Si no solicitaste esta cuenta, hacer caso omiso.</p>";
 
         // Imprimir un mensaje de éxito
@@ -51,12 +51,12 @@ class Email {
     public function enviarInstrucciones() {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'c047170c1664ca';
-        $mail->Password = '530de895707471';
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
         $mail->SMTPSecure = 'tls';
-        $mail->Port = 2525;
+        $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->setFrom('cuentas@appsalon.com');
 
         // Configurar el destinatario
@@ -70,7 +70,7 @@ class Email {
         $mail->Body = "<html>
                        <p><strong>Saludos ".ucfirst($this->nombre)."</strong></p>
                        <p>Has soliticado cambiar tu contraseña dirigite al siguiente enlace</p>
-                       <p><a href='http://localhost/AppSalon_PHP_MVC_JS_SASS/recuperar?token={$this->token}'>Click aquí</a></p>
+                       <p><a href='".$_ENV['APP_URL']."/appsalon/recuperar?token={$this->token}'>Click aquí</a></p>
                        <p>Si no solicitaste este cambio, hacer caso omiso.</p>
                        </html>";
 

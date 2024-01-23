@@ -47,9 +47,10 @@ class Usuario extends ActiveRecord{
         }
         if(!$this->pwd_usuari || (strlen($this->pwd_usuari) < 6)){
             self::$alertas['error'][] = 'La contraseña es requerida y/o debe contener minímo 6 carácteres';
-        }else if(!preg_match($this->pattern,$this->pwd_usuari) ){
-            self::$alertas['error'][] = 'La contraseña debe llevar mayúsculas, minúsculas y carácteres especiales';
         }
+        // }else if(!preg_match($this->pattern,$this->pwd_usuari) ){
+        //     self::$alertas['error'][] = 'La contraseña debe llevar mayúsculas, minúsculas y carácteres especiales';
+        // }
 
         return self::$alertas;
     }

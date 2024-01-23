@@ -111,7 +111,7 @@ function paginaSiguiente() {
 async function consultarApi() {
 
     try {
-        const url = 'http://localhost/AppSalon_PHP_MVC_JS_SASS/api/servicios';
+        const url = '/api/servicios';
         const resultado = await fetch(url);
         const servicios = await resultado.json();
         mostrarServicios(servicios);
@@ -301,7 +301,7 @@ async function reservarCita() {
     // console.log([...datos]);
     try {
         //petición hacia la api
-        const url = 'http://localhost/AppSalon_PHP_MVC_JS_SASS/api/citas';
+        const url = '/api/citas';
 
         const respuesta = await fetch(url, {
             method: 'POST',
